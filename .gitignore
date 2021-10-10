@@ -1,0 +1,9 @@
+*.txt
+tmp/*.zip
+tmp/*.las
+tmp/*.mbtiles
+tmp/*.mbtiles-journal
+lot/*.mbtiles
+lot/*.mbtiles-journal
+docs/zxy
+
