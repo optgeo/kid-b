@@ -1,17 +1,19 @@
+SKIP = true
+
 TMP_DIR = 'tmp'
 LOT_DIR = 'lot'
-LIST_PATH = 'mishima.txt'
+LIST_PATH = 'west.txt'
 MBTILES_PATH = "#{TMP_DIR}/tiles.mbtiles"
 GDAL_DATA = '/usr/share/gdal'
 
 BASE_URL = 'https://x.optgeo.org/kid-b/zxy'
 
 Z_ONE_METER = 19 #18
-BASE = 2 #3
+BASE = 3
 
-MAXZOOM = 18
-MINZOOM = 10
-MINCOPYZOOM = 8
+MAXZOOM = 19
+MINZOOM = 15
+MINCOPYZOOM = 10
 
 LAYER = 'voxel'
 

@@ -2,11 +2,9 @@ require './constants'
 require 'yaml'
 require 'json'
 
-z = ENV['Z'].to_i
-spacing = (BASE ** (Z_ONE_METER - z)).to_f
 basename = ENV['BASENAME']
-#src_path = "#{TMP_DIR}/#{basename}-#{z}.las"
-src_path = "#{TMP_DIR}/#{basename}-#{MAXZOOM}.las"
+src_path = "#{TMP_DIR}/#{basename}.las"
+dst_path = "#{TMP_DIR}/#{basename}-3857.las"
 
 pipeline = <<-EOS
 pipeline: 
@@ -18,9 +16,8 @@ pipeline:
     type: filters.reprojection
     out_srs: "EPSG:3857"
   -
-    type: writers.text
-    format: csv
-    filename: STDOUT
+    type: writers.las
+    filename: #{dst_path}
 EOS
 
 print JSON.dump(YAML.load(pipeline))
